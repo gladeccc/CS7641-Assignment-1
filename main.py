@@ -70,73 +70,73 @@ if __name__ == '__main__':
 
 
     # # Neural Network
-    # classifier_accuracy = np.zeros(3)
-    # classifier_accuracy_2 = np.zeros(3)
-    # time_train = np.zeros(3)
-    # time_infer = np.zeros(3)
-    # classifier_neural_network = MLPClassifier(hidden_layer_sizes=(4, 4), random_state=9)
-    # X_train_train, X_train_val, y_train_train, y_train_val = train_test_split(X_train, y_train, test_size=0.3,
-    #                                                                           random_state=9)
-    # time_train[0], time_infer[0], classifier_accuracy[0], classifier_accuracy_2[0], learning_rate_init, alpha,layer_size,max_iter = best_params_NN_ML(X_train_train, y_train_train,y_train_val,X_train_val,X_test,y_test,
-    #                                                                                                     classifier_neural_network)
-    # np.save("time_train.npy",time_train)
-    # np.save("time_infer.npy",time_infer)
-    # np.save("classifier_accuracy.npy",classifier_accuracy)
-    # np.save("classifier_accuracy_2.npy",classifier_accuracy_2)
+    classifier_accuracy = np.zeros(3)
+    classifier_accuracy_2 = np.zeros(3)
+    time_train = np.zeros(3)
+    time_infer = np.zeros(3)
+    classifier_neural_network = MLPClassifier(hidden_layer_sizes=(4, 4), random_state=9)
+    X_train_train, X_train_val, y_train_train, y_train_val = train_test_split(X_train, y_train, test_size=0.3,
+                                                                              random_state=9)
+    time_train[0], time_infer[0], classifier_accuracy[0], classifier_accuracy_2[0], learning_rate_init, alpha,layer_size,max_iter = best_params_NN_ML(X_train_train, y_train_train,y_train_val,X_train_val,X_test,y_test,
+                                                                                                        classifier_neural_network)
+    np.save("time_train.npy",time_train)
+    np.save("time_infer.npy",time_infer)
+    np.save("classifier_accuracy.npy",classifier_accuracy)
+    np.save("classifier_accuracy_2.npy",classifier_accuracy_2)
 
-    # learning_rate_init, alpha,layer_size,max_iter = [0.01,1.6e-06,15,220]
-    # plot_alpha(X_train, y_train, X_test, y_test, X_less, y_less,learning_rate_init,max_iter,layer_size,np.logspace(-7,0,20),'Credit')
-    # plot_learning_rate_NN(X_train, y_train, X_test, y_test, X_less, y_less,alpha,max_iter,layer_size,np.logspace(-5,0,10),'Credit')
-    # plot_hidden_layer(X_train, y_train, X_test, y_test, X_less, y_less,alpha, learning_rate_init,max_iter,np.arange(2,31,2),'Credit')
-    # learning_curve_NN(X_train, y_train, X_test, y_test, X_less, y_less,learning_rate_init, alpha,layer_size,max_iter,'Credit')
-    # loss_curve_NN(X_train, y_train, X_test, y_test, X_less, y_less,alpha, learning_rate_init,layer_size,np.arange(5, 51 * 5, 5),'Credit')
+    learning_rate_init, alpha,layer_size,max_iter = [0.01,1.6e-06,15,220]
+    plot_alpha(X_train, y_train, X_test, y_test, X_less, y_less,learning_rate_init,max_iter,layer_size,np.logspace(-7,0,20),'Credit')
+    plot_learning_rate_NN(X_train, y_train, X_test, y_test, X_less, y_less,alpha,max_iter,layer_size,np.logspace(-5,0,10),'Credit')
+    plot_hidden_layer(X_train, y_train, X_test, y_test, X_less, y_less,alpha, learning_rate_init,max_iter,np.arange(2,31,2),'Credit')
+    learning_curve_NN(X_train, y_train, X_test, y_test, X_less, y_less,learning_rate_init, alpha,layer_size,max_iter,'Credit')
+    loss_curve_NN(X_train, y_train, X_test, y_test, X_less, y_less,alpha, learning_rate_init,layer_size,np.arange(5, 51 * 5, 5),'Credit')
 
 
     # # # KNN
-    # time_train = np.load("time_train.npy")
-    # time_infer = np.load("time_infer.npy")
-    # classifier_accuracy = np.load("classifier_accuracy.npy")
-    # classifier_accuracy_2 = np.load("classifier_accuracy_2.npy")
-    # classifier_knn = KNeighborsClassifier()
-    # X_train_train, X_train_val, y_train_train, y_train_val = train_test_split(X_train, y_train, test_size=0.3,
-    #                                                                           random_state=9)
-    # time_train[1], time_infer[1], classifier_accuracy[1],classifier_accuracy_2[1], n_neighbors, p, weights, algorithm = best_params_KNN(X_train_train, y_train_train,y_train_val,X_train_val,X_test,y_test,
-    #                                                                                                            classifier_knn)
-    # np.save("time_train.npy",time_train)
-    # np.save("time_infer.npy",time_infer)
-    # np.save("classifier_accuracy.npy",classifier_accuracy)
-    # np.save("classifier_accuracy_2.npy",classifier_accuracy_2)
+    time_train = np.load("time_train.npy")
+    time_infer = np.load("time_infer.npy")
+    classifier_accuracy = np.load("classifier_accuracy.npy")
+    classifier_accuracy_2 = np.load("classifier_accuracy_2.npy")
+    classifier_knn = KNeighborsClassifier()
+    X_train_train, X_train_val, y_train_train, y_train_val = train_test_split(X_train, y_train, test_size=0.3,
+                                                                              random_state=9)
+    time_train[1], time_infer[1], classifier_accuracy[1],classifier_accuracy_2[1], n_neighbors, p, weights, algorithm = best_params_KNN(X_train_train, y_train_train,y_train_val,X_train_val,X_test,y_test,
+                                                                                                               classifier_knn)
+    np.save("time_train.npy",time_train)
+    np.save("time_infer.npy",time_infer)
+    np.save("classifier_accuracy.npy",classifier_accuracy)
+    np.save("classifier_accuracy_2.npy",classifier_accuracy_2)
 
 
-    # neighbors, p,weights,algorithm = [8, 1, 'distance', 'auto']
-    # plot_n_neighbors(X_train, y_train, X_test, y_test, X_less, y_less, p, weights, algorithm, np.arange(1, 50, 2),
-    #                  'Credit')
-    # plot_power(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, weights, algorithm, [1, 2, 3], 'Credit')
-    # learning_curve_knn(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, weights, algorithm, 'Credit')
-    # plot_weight(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, algorithm, ['distance', 'uniform'],
-    #             'Credit')
-    # plot_algo(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, weights,
-    #           ['auto', 'ball_tree', 'kd_tree', 'brute'],
-    #           'Credit')
+    neighbors, p,weights,algorithm = [8, 1, 'distance', 'auto']
+    plot_n_neighbors(X_train, y_train, X_test, y_test, X_less, y_less, p, weights, algorithm, np.arange(1, 50, 2),
+                     'Credit')
+    plot_power(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, weights, algorithm, [1, 2, 3], 'Credit')
+    learning_curve_knn(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, weights, algorithm, 'Credit')
+    plot_weight(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, algorithm, ['distance', 'uniform'],
+                'Credit')
+    plot_algo(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, weights,
+              ['auto', 'ball_tree', 'kd_tree', 'brute'],
+              'Credit')
 
     # # # SVM
-    # time_train = np.load("time_train.npy")
-    # time_infer = np.load("time_infer.npy")
-    # classifier_accuracy = np.load("classifier_accuracy.npy")
-    # classifier_accuracy_2 = np.load("classifier_accuracy_2.npy")
-    # SVM = svm.SVC(random_state=9)
-    # X_train_train, X_train_val, y_train_train, y_train_val = train_test_split(X_train, y_train, test_size=0.3,
-    #                                                                           random_state=9)
-    # time_train[2], time_infer[2], classifier_accuracy[2],classifier_accuracy_2[2], C, kernel = best_params_SVM(X_train_train, y_train_train,y_train_val,X_train_val,X_test,y_test, SVM)
-    # np.save("time_train.npy",time_train)
-    # np.save("time_infer.npy",time_infer)
-    # np.save("classifier_accuracy.npy",classifier_accuracy)
-    # np.save("classifier_accuracy_2.npy",classifier_accuracy_2)
+    time_train = np.load("time_train.npy")
+    time_infer = np.load("time_infer.npy")
+    classifier_accuracy = np.load("classifier_accuracy.npy")
+    classifier_accuracy_2 = np.load("classifier_accuracy_2.npy")
+    SVM = svm.SVC(random_state=9)
+    X_train_train, X_train_val, y_train_train, y_train_val = train_test_split(X_train, y_train, test_size=0.3,
+                                                                              random_state=9)
+    time_train[2], time_infer[2], classifier_accuracy[2],classifier_accuracy_2[2], C, kernel = best_params_SVM(X_train_train, y_train_train,y_train_val,X_train_val,X_test,y_test, SVM)
+    np.save("time_train.npy",time_train)
+    np.save("time_infer.npy",time_infer)
+    np.save("classifier_accuracy.npy",classifier_accuracy)
+    np.save("classifier_accuracy_2.npy",classifier_accuracy_2)
 
     C, kernel =[2.15,'rbf']
-    # plot_c(X_train, y_train, X_test, y_test, X_less, y_less, kernel, np.logspace(-3, 3, 10), 'Credit')
-    # plot_kernel_type(X_train, y_train, X_test, y_test, X_less, y_less, C, ['linear', 'rbf', 'poly', 'sigmoid'], 'Credit')
-    # learning_curve_svm(X_train, y_train, X_test, y_test, X_less, y_less, C, kernel, 'Credit')
+    plot_c(X_train, y_train, X_test, y_test, X_less, y_less, kernel, np.logspace(-3, 3, 10), 'Credit')
+    plot_kernel_type(X_train, y_train, X_test, y_test, X_less, y_less, C, ['linear', 'rbf', 'poly', 'sigmoid'], 'Credit')
+    learning_curve_svm(X_train, y_train, X_test, y_test, X_less, y_less, C, kernel, 'Credit')
     loss_curve_SVM(X_train, y_train, X_test, y_test, X_less, y_less, C, kernel, np.arange(1,200,10),'Credit')
 
 
@@ -172,71 +172,71 @@ if __name__ == '__main__':
 
 
     # # Neural Network
-    # classifier_accuracy = np.zeros(3)
-    # classifier_accuracy_2 = np.zeros(3)
-    # time_train = np.zeros(3)
-    # time_infer = np.zeros(3)
-    # classifier_neural_network = MLPClassifier(hidden_layer_sizes=(4, 4), random_state=9, max_iter=200)
-    # time_train[0], time_infer[0], classifier_accuracy[0], classifier_accuracy_2[0],learning_rate_init, alpha,layer_size,max_iter = best_params_NN_ML(X_train,
-    #                                                                                                     y_train, y_test,
-    #                                                                                                     X_test,X_less,y_less,
-    #                                                                                                     classifier_neural_network)
-    # np.save("time_train2.npy",time_train)
-    # np.save("time_infer2.npy",time_infer)
-    # np.save("classifier_accuracy2.npy",classifier_accuracy)
-    # np.save("classifier_accuracy2_2.npy", classifier_accuracy_2)
+    classifier_accuracy = np.zeros(3)
+    classifier_accuracy_2 = np.zeros(3)
+    time_train = np.zeros(3)
+    time_infer = np.zeros(3)
+    classifier_neural_network = MLPClassifier(hidden_layer_sizes=(4, 4), random_state=9, max_iter=200)
+    time_train[0], time_infer[0], classifier_accuracy[0], classifier_accuracy_2[0],learning_rate_init, alpha,layer_size,max_iter = best_params_NN_ML(X_train,
+                                                                                                        y_train, y_test,
+                                                                                                        X_test,X_less,y_less,
+                                                                                                        classifier_neural_network)
+    np.save("time_train2.npy",time_train)
+    np.save("time_infer2.npy",time_infer)
+    np.save("classifier_accuracy2.npy",classifier_accuracy)
+    np.save("classifier_accuracy2_2.npy", classifier_accuracy_2)
 
 
-    # learning_rate_init, alpha, layer_size, max_iter = [0.02154, 0.000129, 22, 240]
-    # plot_alpha(X_train, y_train, X_test, y_test, X_less, y_less,learning_rate_init,max_iter,layer_size,np.logspace(-7,0,20),'Music')
-    # plot_learning_rate_NN(X_train, y_train, X_test, y_test, X_less, y_less,alpha,max_iter,layer_size,np.logspace(-5,0,10),'Music')
-    # plot_hidden_layer(X_train, y_train, X_test, y_test, X_less, y_less,alpha, learning_rate_init,max_iter,np.arange(2,31,2),'Music')
-    # learning_curve_NN(X_train, y_train, X_test, y_test, X_less, y_less,learning_rate_init, alpha,layer_size,max_iter,'Music')
-    # loss_curve_NN(X_train, y_train, X_test, y_test, X_less, y_less,alpha, learning_rate_init,layer_size,np.arange(5, 51 * 5, 5),'Music')
+    learning_rate_init, alpha, layer_size, max_iter = [0.02154, 0.000129, 22, 240]
+    plot_alpha(X_train, y_train, X_test, y_test, X_less, y_less,learning_rate_init,max_iter,layer_size,np.logspace(-7,0,20),'Music')
+    plot_learning_rate_NN(X_train, y_train, X_test, y_test, X_less, y_less,alpha,max_iter,layer_size,np.logspace(-5,0,10),'Music')
+    plot_hidden_layer(X_train, y_train, X_test, y_test, X_less, y_less,alpha, learning_rate_init,max_iter,np.arange(2,31,2),'Music')
+    learning_curve_NN(X_train, y_train, X_test, y_test, X_less, y_less,learning_rate_init, alpha,layer_size,max_iter,'Music')
+    loss_curve_NN(X_train, y_train, X_test, y_test, X_less, y_less,alpha, learning_rate_init,layer_size,np.arange(5, 51 * 5, 5),'Music')
 
 
     # # # KNN
-    # time_train = np.load("time_train2.npy")
-    # time_infer = np.load("time_infer2.npy")
-    # classifier_accuracy = np.load("classifier_accuracy2.npy")
-    # classifier_accuracy_2 = np.load("classifier_accuracy2_2.npy")
-    # classifier_knn = KNeighborsClassifier()
-    # time_train[1], time_infer[1], classifier_accuracy[1], classifier_accuracy_2[1],n_neighbors, p, weights, algorithm = best_params_KNN(X_train,
-    #                                                                                                            y_train,
-    #                                                                                                            y_test,
-    #                                                                                                            X_test,X_less,y_less,
-    #                                                                                                            classifier_knn)
-    # np.save("time_train2.npy",time_train)
-    # np.save("time_infer2.npy",time_infer)
-    # np.save("classifier_accuracy2.npy",classifier_accuracy)
-    # np.save("classifier_accuracy2_2.npy", classifier_accuracy_2)
+    time_train = np.load("time_train2.npy")
+    time_infer = np.load("time_infer2.npy")
+    classifier_accuracy = np.load("classifier_accuracy2.npy")
+    classifier_accuracy_2 = np.load("classifier_accuracy2_2.npy")
+    classifier_knn = KNeighborsClassifier()
+    time_train[1], time_infer[1], classifier_accuracy[1], classifier_accuracy_2[1],n_neighbors, p, weights, algorithm = best_params_KNN(X_train,
+                                                                                                               y_train,
+                                                                                                               y_test,
+                                                                                                               X_test,X_less,y_less,
+                                                                                                               classifier_knn)
+    np.save("time_train2.npy",time_train)
+    np.save("time_infer2.npy",time_infer)
+    np.save("classifier_accuracy2.npy",classifier_accuracy)
+    np.save("classifier_accuracy2_2.npy", classifier_accuracy_2)
 
 
-    # neighbors, p,weights,algorithm = [46, 1, 'uniform', 'auto']
-    # plot_n_neighbors(X_train, y_train, X_test, y_test, X_less, y_less,p,weights,algorithm, np.arange(1, 50,5), 'Music')
-    # plot_power(X_train, y_train, X_test, y_test, X_less, y_less,neighbors,weights,algorithm, [1,2,3], 'Music')
-    # learning_curve_knn(X_train, y_train, X_test, y_test, X_less, y_less,neighbors, p,weights,algorithm, 'Music')
-    # plot_weight(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, algorithm, ['distance', 'uniform'], 'Music')
-    # plot_algo(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, weights, ['auto', 'ball_tree', 'kd_tree', 'brute'],
-    #             'Music')
+    neighbors, p,weights,algorithm = [46, 1, 'uniform', 'auto']
+    plot_n_neighbors(X_train, y_train, X_test, y_test, X_less, y_less,p,weights,algorithm, np.arange(1, 50,5), 'Music')
+    plot_power(X_train, y_train, X_test, y_test, X_less, y_less,neighbors,weights,algorithm, [1,2,3], 'Music')
+    learning_curve_knn(X_train, y_train, X_test, y_test, X_less, y_less,neighbors, p,weights,algorithm, 'Music')
+    plot_weight(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, algorithm, ['distance', 'uniform'], 'Music')
+    plot_algo(X_train, y_train, X_test, y_test, X_less, y_less, neighbors, p, weights, ['auto', 'ball_tree', 'kd_tree', 'brute'],
+                'Music')
 
     # # # SVM
-    # time_train = np.load("time_train2.npy")
-    # time_infer = np.load("time_infer2.npy")
-    # classifier_accuracy = np.load("classifier_accuracy2.npy")
-    # classifier_accuracy_2 = np.load("classifier_accuracy2_2.npy")
-    # SVM = svm.SVC(random_state=9)
-    # time_train[2], time_infer[2], classifier_accuracy[2], classifier_accuracy_2[2],C, kernel = best_params_SVM(X_train, y_train,y_test,X_test,X_less,y_less, SVM)
-    # np.save("time_train.npy2",time_train)
-    # np.save("time_infer.npy2",time_infer)
-    # np.save("classifier_accuracy2.npy",classifier_accuracy)
-    # np.save("classifier_accuracy2_2.npy",classifier_accuracy_2)
+    time_train = np.load("time_train2.npy")
+    time_infer = np.load("time_infer2.npy")
+    classifier_accuracy = np.load("classifier_accuracy2.npy")
+    classifier_accuracy_2 = np.load("classifier_accuracy2_2.npy")
+    SVM = svm.SVC(random_state=9)
+    time_train[2], time_infer[2], classifier_accuracy[2], classifier_accuracy_2[2],C, kernel = best_params_SVM(X_train, y_train,y_test,X_test,X_less,y_less, SVM)
+    np.save("time_train.npy2",time_train)
+    np.save("time_infer.npy2",time_infer)
+    np.save("classifier_accuracy2.npy",classifier_accuracy)
+    np.save("classifier_accuracy2_2.npy",classifier_accuracy_2)
 
-    # C, kernel =[2.15,'rbf']
+    C, kernel =[2.15,'rbf']
     loss_curve_SVM(X_train, y_train, X_test, y_test, X_less, y_less, C, kernel, np.arange(1,200,10), 'Music')
-    # plot_c(X_train, y_train, X_test, y_test, X_less, y_less, kernel, np.logspace(-3, 3, 10), 'Music')
-    # plot_kernel_type(X_train, y_train, X_test, y_test, X_less, y_less, C, ['linear', 'rbf', 'poly', 'sigmoid'], 'Music')
-    # learning_curve_svm(X_train, y_train, X_test, y_test, X_less, y_less, C, kernel, 'Music')
+    plot_c(X_train, y_train, X_test, y_test, X_less, y_less, kernel, np.logspace(-3, 3, 10), 'Music')
+    plot_kernel_type(X_train, y_train, X_test, y_test, X_less, y_less, C, ['linear', 'rbf', 'poly', 'sigmoid'], 'Music')
+    learning_curve_svm(X_train, y_train, X_test, y_test, X_less, y_less, C, kernel, 'Music')
 
     # comparison
     time_train = np.load("time_train.npy")[0:3]
